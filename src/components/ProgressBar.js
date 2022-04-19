@@ -1,7 +1,15 @@
 import React from 'react';
 import { Slider } from 'antd'
 
-const ProgressBar = ({musicPlayed, setMusicPlayed}) => {
+const ProgressBar = React.forwardRef(({ min, max, musicPlayed, setMusicPlayed, setIsSeeking}, ref) => {
+    const onChangeHandler = (time) => {
+        setIsSeeking(true); 
+        setMusicPlayed(parseFloat(time))
+    }
+    const onAfterChangeHandler = (time) => {
+        setIsSeeking(false);
+        ref.current.seekTo(parseFloat(time));
+    }
     const tipFormatter = (time) => {
         let minute = parseInt(time / 60);
         let second = time - 60 * parseInt(time / 60);
@@ -12,10 +20,13 @@ const ProgressBar = ({musicPlayed, setMusicPlayed}) => {
     return (
         <Slider 
         value={musicPlayed} 
-        onAfterChange={(val) => setMusicPlayed(val)} 
+        min={min}
+        max={max}
+        onChange={onChangeHandler}
+        onAfterChange={onAfterChangeHandler} 
         tipFormatter={tipFormatter}
         />
     )
-}
+});
 
 export default ProgressBar;

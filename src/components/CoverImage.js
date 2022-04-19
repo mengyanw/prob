@@ -1,8 +1,9 @@
 import React from "react";
+import "./CoverImage.css"
 
 const CoverImage = ({coverSrc}) => {
     return (
-        <img src={coverSrc} />
+        <img className="cover-image" src={coverSrc} alt="cover"/>
     )
 }
 

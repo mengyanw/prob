@@ -1,12 +1,23 @@
-import React from 'react';
-import './App.css';
-import AppLayout from './components/AppLayout';
+import React from "react";
+import "./App.less";
+import MusicPlayer from "./components/MusicPlayer";
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
   return (
-    <main className="container">
-      <AppLayout />
-    </main> 
+    <>
+      <header>PROB</header>
+      <main className="music-player-container">
+        <MusicPlayer />
+      </main>
+      <footer>
+        <p>&copy; Designed & Coded by Mengyan Wu</p>
+      </footer>
+      {/* <Footer>
+       <p>&copy; Designed & Coded by Mengyan Wu</p> 
+      </Footer> */}
+    </>
   );
 }
 
