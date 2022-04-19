@@ -5,24 +5,10 @@ import CoverImage from "./CoverImage";
 import ProgressBar from "./ProgressBar";
 import MusicPlayerController from "./MusicPlayerController";
 import MusicInfo from "./MusicInfo";
+import defaultPlayList from "../music-config";
 import "./MusicPlayer.css";
 
 const MusicPlayer = () => {
-  let defaultPlayList = [
-    {
-      musicName: "平凡之路",
-      artist: "朴树",
-      musicSrc: "music/pfzl.mp3",
-      coverSrc: "music/pfzl.jpeg",
-    },
-    {
-      musicName: "蓝莲花",
-      artist: "许巍",
-      musicSrc: "music/llh.mp3",
-      coverSrc: "music/llh.jpeg",
-    },
-  ];
-
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSeeking, setIsSeeking] = useState(false);
   const [musicPlayed, setMusicPlayed] = useState(0);
