@@ -41,7 +41,9 @@ const MusicPlayer = () => {
 
   return (
     <div className="music-player">
-      <CoverImage coverSrc={playList[playListIndex].coverSrc} />
+      <CoverImage 
+      coverSrc={playList[playListIndex].coverSrc}
+       />
       <MusicInfo
         musicName={playList[playListIndex].musicName}
         artist={playList[playListIndex].artist}
@@ -51,7 +53,6 @@ const MusicPlayer = () => {
         url={playList[playListIndex].musicSrc}
         playing={isPlaying}
         loop={false} // to add state
-        controls={true}
         volume={0.5}
         played={musicPlayed}
         width="100%"
